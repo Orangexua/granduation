@@ -41,7 +41,6 @@
 
 
 <script>
-// eslint-disable-next-line
 export default {
   name: 'Login',
   data() {
