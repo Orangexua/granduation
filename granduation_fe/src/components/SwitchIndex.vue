@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import Login from "../views/Login.vue"
+import Register from "../views/Register"
 export default {
   name: 'ZhiHuIndex',
   data () {
@@ -20,8 +22,6 @@ export default {
     Register
   }
 }
-import Login from "../views/Login.vue"
-import Register from "../views/Register"
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

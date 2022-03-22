@@ -8,8 +8,13 @@ const routes = [
     component: Login
   },
   {
+    path: '/login',
+    name: 'toLogin',
+    component: Login
+  },
+  {
     path: '/register',
-    name: 'Register',
+    name: 'toRegister',
     component: Register
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -22,5 +27,4 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes
 })
-
 export default router

@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    <ZhiHuIndex/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import ZhiHuIndex from './components/ZhiHuIndex'
 
 export default {
   name: 'App',
   components: {
-    ZhiHuIndex
+
   }
 }
 </script>

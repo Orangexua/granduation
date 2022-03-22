@@ -24,7 +24,7 @@
                 </div>
         </form>
         <div class="bottom">
-            <span>已有账号？<a href="javascript:" @click="toggleComponent" class="toggle-register-btn">登陆</a></span>
+            <span>已有账号？<a href="javascript:" @click="toLogin" class="toggle-register-btn">登陆</a></span>
         </div>
     </div>
 </template>
@@ -52,9 +52,11 @@ export default {
       if (!value || value.length < 1)
         return (this.errorMessage[name] = "不能为空");
       else this.errorMessage[name] = "";
+    },
+    toLogin() {
+      this.$router.push('/login')
     }
-  },
-  props: ["toggleComponent"]
+  }
 };
 </script>
 

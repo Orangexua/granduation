@@ -34,7 +34,7 @@
             </div>
         </form>
         <div class="bottom">
-            <span>没有账号？<a href="javascript:" @click="toggleComponent" class="toggle-register-btn">注册</a></span>
+            <span>没有账号？<a href="javascript:" @click="toRegister" class="toggle-register-btn">注册</a></span>
         </div>
     </div>
 </template>
@@ -67,9 +67,11 @@ export default {
     },
     toggleHiddenPassword() {
       this.hidden = !this.hidden;
+    },
+    toRegister() {
+      this.$router.push('/register')
     }
-  },
-  props: ["toggleComponent"]
+  }
 };
 </script>
 
