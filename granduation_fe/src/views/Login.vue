@@ -12,11 +12,11 @@
             </div>
             <div class="phone">
                 <input type="password" v-if="hidden" @blur="onBlurCheck('password')" 
-                :class="{'phone-input':true,error:errorMessage.password.indexOf('不能为空')>-1}" 
-                :placeholder="errorMessage['password']"  v-model.trim="password">
+                  :class="{'phone-input':true,error:errorMessage.password.indexOf('不能为空')>-1}" 
+                  :placeholder="errorMessage['password']"  v-model.trim="password">
                 <input type="text" v-else @blur="onBlurCheck('password')" 
-                :class="{'phone-input':true,error:errorMessage.password.indexOf('不能为空')>-1}" 
-                :placeholder="errorMessage['password']" v-model.trim="password">
+                  :class="{'phone-input':true,error:errorMessage.password.indexOf('不能为空')>-1}" 
+                  :placeholder="errorMessage['password']" v-model.trim="password">
                 <i v-if="hidden" @click="toggleHiddenPassword" class="iconfont icon-yanjing-xiexian"></i>
                 <i v-else @click="toggleHiddenPassword" class="iconfont icon-yanjing"></i>
             </div>
@@ -41,6 +41,10 @@
 
 
 <script>
+
+import { getCurrentInstance} from 'vue'
+import axios from '../axios/index'
+
 export default {
   name: 'Login',
   data() {
@@ -74,6 +78,13 @@ export default {
     },
     toIndex() {
       this.$router.push('/index')
+      axios.get('/mock/756312/user/1')
+        .then((res) => {
+          console.log('res: ', res)
+        })
+        .catch((err) => {
+          console.log('err: ', err)
+        })
     }
   }
 };

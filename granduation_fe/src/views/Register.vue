@@ -54,7 +54,7 @@ export default {
       else this.errorMessage[name] = "";
     },
     toLogin() {
-      this.$router.push('/login')
+      this.$router.push('/login');
     }
   }
 };
