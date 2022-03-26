@@ -1,9 +1,9 @@
 <template>
     <div class="register">
         <span class="zhihu-name">
-            知乎
+            电管
         </span>
-        <div class="tip">注册知乎，发现更大的世界</div>
+        <div class="tip">注册电管，发现更大的世界</div>
         <form action="shubmit">
             <div class="phone">
                 <select name="" id="Prefix" v-model="selected" >

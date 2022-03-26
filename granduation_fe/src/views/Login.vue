@@ -1,9 +1,9 @@
 <template>
     <div class="login">
         <span class="zhihu-name">
-            知乎
+            电管
         </span>
-        <div class="tip">注册知乎，发现更大的世界</div>
+        <div class="tip">发现更大的世界</div>
         <form action="shubmit">
             <div class="phone">
                 <input type="text" @blur="onBlurCheck('phone')" 
@@ -24,7 +24,7 @@
                 <a href="javascript:" class="toggle-code-login">手机验证码登陆</a>
                 <a href="javascript:" class="forget-password">忘记密码</a>
             </div>
-            <a href="javascript:" class="login-btn">登陆</a>
+            <a href="javascript:" class="login-btn" @click="toIndex">登陆</a>
             <div class="register-org">
                 <a href="javascript:" class="other-login-btn">二维码登陆</a>
                 <span>·</span>
@@ -63,13 +63,17 @@ export default {
       const value = this[name];
       if (!value || value.length < 1)
         return (this.errorMessage[name] = "不能为空");
-      else this.errorMessage[name] = "";
+      else 
+        this.errorMessage[name] = "";
     },
     toggleHiddenPassword() {
       this.hidden = !this.hidden;
     },
     toRegister() {
       this.$router.push('/register')
+    },
+    toIndex() {
+      this.$router.push('/index')
     }
   }
 };
