@@ -42,7 +42,7 @@
 
 <script>
 
-import { getCurrentInstance} from 'vue'
+// import { getCurrentInstance} from 'vue'
 import axios from '../axios/index'
 
 export default {
