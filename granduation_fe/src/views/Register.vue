@@ -14,13 +14,11 @@
             </div>
             <div class="code">
                 <input type="text" @blur="onBlurCheck('code')" :class="{'code-input':true,error:errorMessage.code.indexOf('不能为空')>-1}" :placeholder="errorMessage['code']" v-model.number.trim="code">
-                <a href="javascript:" class="code-btn">获取短信验证码</a>
+                <a href="javascript:" class="code-btn" @click="toRegisterCode()">获取短信验证码</a>
             </div>
-            <div class="souce">接受语音验证码</div>
             <a href="javascript:" class="register-btn">注册</a>
             <div class="register-org">
-                <span>注册即代表同意《知乎协议》《隐私政策》</span>
-                <a href="javascript:" class="org-btn">注册机构</a>
+                <span>注册即代表同意《电管协议》《隐私政策》</span>
                 </div>
         </form>
         <div class="bottom">
@@ -30,6 +28,8 @@
 </template>
 
 <script>
+import axios from '../axios/index'
+
 export default {
   name: "Register",
   data() {
@@ -55,6 +55,15 @@ export default {
     },
     toLogin() {
       this.$router.push('/login');
+    },
+    toRegisterCode() {
+      axios.post('/mock/756312/user/verification-code',{id : 13})
+        .then((res) => {
+          console.log('post:res: ', res)
+        })
+        .catch((err) => {
+          console.log('post:err: ', err)
+        })
     }
   }
 };
